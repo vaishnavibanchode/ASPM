@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="50%" stop-color="#0D9488" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#070F1E" />
+  <circle cx="32" cy="32" r="24" stroke="url(#g1)" stroke-width="2.5" stroke-dasharray="4 3" opacity="0.6"/>
+  <!-- Caduceus / Flame of Wisdom -->
+  <path d="M32 14v36M24 24c4-4 12-4 16 0M24 34c4-4 12-4 16 0" stroke="url(#g1)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="14" r="3.5" fill="#00E5FF"/>
+</svg>
