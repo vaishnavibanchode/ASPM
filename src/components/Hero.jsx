@@ -217,20 +217,25 @@ export default function Hero({ onOpenAdmissionModal }) {
             <div 
               className="warm-card"
               style={{
-                padding: '26px 28px',
-                borderRadius: '26px',
+                padding: '34px 38px',
+                borderRadius: '30px',
                 textAlign: 'left',
                 background: '#FFFFFF',
-                boxShadow: '0 8px 24px -6px rgba(30, 58, 47, 0.06)'
+                border: '1.5px solid #ECE6DB',
+                boxShadow: '0 10px 32px -8px rgba(30, 58, 47, 0.08), 0 2px 8px rgba(30, 58, 47, 0.03)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease'
               }}
             >
-              <div className="font-display" style={{ fontSize: '2.5rem', fontWeight: 800, color: '#1E3A2F', lineHeight: 1.05, marginBottom: '8px' }}>
-                36<span style={{ fontSize: '1.8rem', color: '#2E5E4C' }}>+</span>
+              <div className="font-display" style={{ fontSize: '2.8rem', fontWeight: 800, color: '#1E3A2F', lineHeight: 1, marginBottom: '12px' }}>
+                36<span style={{ fontSize: '2rem', color: '#2E5E4C' }}>+</span>
               </div>
-              <div style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#1E3A2F', fontWeight: 800, marginBottom: '6px' }}>
+              <div style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '8px' }}>
                 Years of Service
               </div>
-              <div style={{ fontSize: '0.86rem', color: '#4A5851', lineHeight: 1.45 }}>
+              <div style={{ fontSize: '0.92rem', color: '#4A5851', lineHeight: 1.5 }}>
                 Serving Maharashtra since 1989
               </div>
             </div>
@@ -239,20 +244,25 @@ export default function Hero({ onOpenAdmissionModal }) {
             <div 
               className="warm-card"
               style={{
-                padding: '26px 28px',
-                borderRadius: '26px',
+                padding: '34px 38px',
+                borderRadius: '30px',
                 textAlign: 'left',
                 background: '#FFFFFF',
-                boxShadow: '0 8px 24px -6px rgba(30, 58, 47, 0.06)'
+                border: '1.5px solid #ECE6DB',
+                boxShadow: '0 10px 32px -8px rgba(30, 58, 47, 0.08), 0 2px 8px rgba(30, 58, 47, 0.03)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease'
               }}
             >
-              <div className="font-display" style={{ fontSize: '2.5rem', fontWeight: 800, color: '#1E3A2F', lineHeight: 1.05, marginBottom: '8px' }}>
-                5,000<span style={{ fontSize: '1.8rem', color: '#22865E' }}>+</span>
+              <div className="font-display" style={{ fontSize: '2.8rem', fontWeight: 800, color: '#1E3A2F', lineHeight: 1, marginBottom: '12px' }}>
+                5,000<span style={{ fontSize: '2rem', color: '#22865E' }}>+</span>
               </div>
-              <div style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#1E3A2F', fontWeight: 800, marginBottom: '6px' }}>
+              <div style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '8px' }}>
                 Trained Graduates
               </div>
-              <div style={{ fontSize: '0.86rem', color: '#4A5851', lineHeight: 1.45 }}>
+              <div style={{ fontSize: '0.92rem', color: '#4A5851', lineHeight: 1.5 }}>
                 In hospitals & health centers
               </div>
             </div>
@@ -261,20 +271,25 @@ export default function Hero({ onOpenAdmissionModal }) {
             <div 
               className="warm-card"
               style={{
-                padding: '26px 28px',
-                borderRadius: '26px',
+                padding: '34px 38px',
+                borderRadius: '30px',
                 textAlign: 'left',
                 background: '#FFFFFF',
-                boxShadow: '0 8px 24px -6px rgba(30, 58, 47, 0.06)'
+                border: '1.5px solid #ECE6DB',
+                boxShadow: '0 10px 32px -8px rgba(30, 58, 47, 0.08), 0 2px 8px rgba(30, 58, 47, 0.03)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease'
               }}
             >
-              <div className="font-display" style={{ fontSize: '2.3rem', fontWeight: 800, color: '#1E3A2F', lineHeight: 1.05, marginBottom: '8px' }}>
+              <div className="font-display" style={{ fontSize: '2.6rem', fontWeight: 800, color: '#1E3A2F', lineHeight: 1, marginBottom: '12px' }}>
                 ₹34,000
               </div>
-              <div style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#1E3A2F', fontWeight: 800, marginBottom: '6px' }}>
+              <div style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '8px' }}>
                 Annual ANM Fee
               </div>
-              <div style={{ fontSize: '0.86rem', color: '#4A5851', lineHeight: 1.45 }}>
+              <div style={{ fontSize: '0.92rem', color: '#4A5851', lineHeight: 1.5 }}>
                 Govt-subsidized rate for 2025–26
               </div>
             </div>

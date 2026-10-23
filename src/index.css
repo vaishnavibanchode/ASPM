@@ -177,18 +177,18 @@ body {
 .hero-stats-panel {
   display: flex;
   flex-direction: column;
-  gap: 22px; /* Open, airy spacing between stat cards */
+  gap: 30px; /* Generous separation so boxes never get too close */
 }
 
 @media (min-width: 1024px) {
   .hero-layout-grid {
     grid-template-columns: 1.15fr 0.95fr 0.85fr;
-    gap: 44px; /* Balanced column separation */
+    gap: 48px; /* Balanced column separation */
   }
   .hero-stats-panel {
     display: flex !important;
     flex-direction: column;
-    gap: 22px;
+    gap: 30px !important; /* Distinct vertical separation */
   }
 }
 
@@ -196,8 +196,8 @@ body {
   .hero-stats-panel {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 18px !important;
-    margin-top: 24px;
+    gap: 20px !important;
+    margin-top: 28px;
     width: 100%;
   }
 }
@@ -205,7 +205,7 @@ body {
 @media (max-width: 640px) {
   .hero-stats-panel {
     grid-template-columns: 1fr !important;
-    gap: 16px !important;
+    gap: 20px !important;
   }
 }
 
