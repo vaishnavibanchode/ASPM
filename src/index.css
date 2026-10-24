@@ -306,14 +306,18 @@ body {
 
 .hero-image-block {
   display: flex;
-  justifyContent: center;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .hero-image-wrapper {
   position: relative;
   width: 100%;
-  max-width: 360px;
+  max-width: 350px;
+  margin: 0 auto;
 }
 
 .hero-arched-frame {
@@ -325,6 +329,7 @@ body {
   border: 5px solid #ffffff;
   background: #eaf2ed;
   position: relative;
+  margin: 0 auto;
 }
 
 /* Stats Row Below Section: Arranged properly across 3 cards */
@@ -388,6 +393,7 @@ body {
     grid-template-columns: 1fr;
     gap: 40px;
     margin-bottom: 38px;
+    justify-items: center;
   }
   .hero-text-block {
     text-align: center;
@@ -402,11 +408,21 @@ body {
   .hero-checklist {
     justify-content: center;
   }
+  .hero-image-block {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
   .hero-image-wrapper {
-    max-width: 320px;
+    max-width: 320px !important;
+    margin: 0 auto !important;
   }
   .hero-arched-frame {
-    height: 380px;
+    margin: 0 auto !important;
+    height: 380px !important;
   }
   .hero-stats-row {
     grid-template-columns: repeat(3, 1fr);
@@ -423,15 +439,36 @@ body {
 /* Mobile Responsiveness (< 768px) */
 @media (max-width: 767px) {
   .hero-main-grid {
+    grid-template-columns: 1fr !important;
     gap: 32px;
     margin-bottom: 30px;
+    justify-items: center !important;
   }
-  .hero-arched-frame {
-    height: 320px;
-    border-radius: 150px 150px 30px 30px;
+  .hero-image-block {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    text-align: center !important;
   }
   .hero-image-wrapper {
-    max-width: 270px;
+    max-width: 270px !important;
+    margin: 0 auto !important;
+  }
+  .hero-arched-frame {
+    margin: 0 auto !important;
+    height: 320px !important;
+    border-radius: 150px 150px 30px 30px !important;
+  }
+  .hero-image-badge {
+    white-space: nowrap !important;
+    padding: 7px 14px !important;
+    font-size: 0.74rem !important;
+    max-width: 90% !important;
+    justify-content: center !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
   .hero-action-buttons {
     flex-direction: column;

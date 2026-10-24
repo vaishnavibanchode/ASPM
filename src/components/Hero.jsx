@@ -143,11 +143,29 @@ export default function Hero({ onOpenAdmissionModal }) {
             </div>
           </div>
 
-          {/* Right Column: Arched Doctor Portrait */}
-          <div ref={centerImgRef} className="hero-image-block">
-            <div className="hero-image-wrapper">
+          {/* Right Column: Arched Doctor Portrait (Perfect Center Alignment) */}
+          <div 
+            ref={centerImgRef} 
+            className="hero-image-block"
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%',
+              margin: '0 auto'
+            }}
+          >
+            <div 
+              className="hero-image-wrapper"
+              style={{
+                position: 'relative',
+                width: '100%',
+                maxWidth: '350px',
+                margin: '0 auto'
+              }}
+            >
               {/* Arched Oval Stadium Frame */}
-              <div className="hero-arched-frame">
+              <div className="hero-arched-frame" style={{ margin: '0 auto' }}>
                 <img 
                   src="/images/nurse-portrait.jpg" 
                   alt="Senior Nurse Educator at Swami Narayan Nursing Institute" 
@@ -179,7 +197,7 @@ export default function Hero({ onOpenAdmissionModal }) {
                   transform: 'translateX(-50%)',
                   background: '#FFFFFF',
                   borderRadius: '9999px',
-                  padding: '8px 20px',
+                  padding: '8px 18px',
                   border: '1px solid #E6E0D5',
                   boxShadow: '0 8px 24px rgba(30, 58, 47, 0.12)',
                   display: 'flex',
