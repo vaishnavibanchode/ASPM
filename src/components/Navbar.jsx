@@ -4,8 +4,6 @@ import {
   Sparkles, 
   Menu, 
   X, 
-  Volume2, 
-  VolumeX, 
   GraduationCap
 } from 'lucide-react';
 import { soundManager } from '../utils/soundEffects';
@@ -13,7 +11,6 @@ import { soundManager } from '../utils/soundEffects';
 export default function Navbar({ onOpenAdmissionModal }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -28,11 +25,6 @@ export default function Navbar({ onOpenAdmissionModal }) {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const toggleSound = () => {
-    const active = soundManager.toggle();
-    setSoundEnabled(active);
-  };
 
   const navLinks = [
     { label: 'Home', href: '#home' },
@@ -160,52 +152,31 @@ export default function Navbar({ onOpenAdmissionModal }) {
             ))}
           </nav>
 
-          {/* Right Action Cluster (Comfortably inset from the capsule curve) */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0, whiteSpace: 'nowrap', paddingRight: '2px' }}>
-            {/* Audio Toggle */}
-            <button
-              onClick={toggleSound}
-              className="nav-audio-btn"
-              title={soundEnabled ? 'Mute sound' : 'Enable sound'}
-              style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
-                background: soundEnabled ? '#EAF2ED' : '#F4F0E8',
-                border: soundEnabled ? '1px solid #2E5E4C' : '1px solid #E6E0D5',
-                color: soundEnabled ? '#1E3A2F' : '#6F7D75',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                flexShrink: 0,
-                transition: 'all 0.2s ease'
-              }}
-            >
-              {soundEnabled ? <Volume2 size={15} /> : <VolumeX size={15} />}
-            </button>
-
+          {/* Right Action Cluster: Helpline + Apply 2025 (Comfortable Spacing) */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0, whiteSpace: 'nowrap', paddingRight: '2px' }}>
             {/* Helpline Pill */}
             <a
               href="tel:+917058830058"
               onClick={() => soundManager.playChime(440, 'triangle', 0.2)}
               className="nav-helpline-pill"
               style={{
+                display: 'inline-flex',
                 alignItems: 'center',
                 gap: '7px',
-                padding: '8px 16px',
+                padding: '9px 18px',
                 borderRadius: '9999px',
                 background: 'var(--accent-coral-light)',
                 border: '1px solid var(--accent-coral-border)',
                 color: 'var(--accent-coral)',
                 textDecoration: 'none',
-                fontSize: '0.8rem',
+                fontSize: '0.82rem',
                 fontWeight: 700,
                 flexShrink: 0,
                 whiteSpace: 'nowrap',
                 transition: 'all 0.2s ease'
               }}
             >
-              <PhoneCall size={13} color="var(--accent-coral)" />
+              <PhoneCall size={14} color="var(--accent-coral)" />
               <span>Helpline</span>
             </a>
 
@@ -217,8 +188,8 @@ export default function Navbar({ onOpenAdmissionModal }) {
               }}
               className="btn-magnetic btn-primary nav-apply-btn"
               style={{
-                padding: '9px 18px',
-                fontSize: '0.84rem',
+                padding: '9px 20px',
+                fontSize: '0.85rem',
                 flexShrink: 0,
                 whiteSpace: 'nowrap',
                 marginRight: '2px'
@@ -235,6 +206,7 @@ export default function Navbar({ onOpenAdmissionModal }) {
                 setMobileMenuOpen(!mobileMenuOpen);
               }}
               className="mobile-menu-btn"
+              aria-label="Toggle navigation menu"
               style={{
                 width: '38px',
                 height: '38px',
@@ -287,32 +259,8 @@ export default function Navbar({ onOpenAdmissionModal }) {
                   {item.label}
                 </a>
               ))}
-              
-              {/* Mobile Sound Toggle Row */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #F3EFE8' }}>
-                <span style={{ fontSize: '0.9rem', color: '#4A5851', fontWeight: 600 }}>Interactive Audio FX</span>
-                <button
-                  onClick={toggleSound}
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    padding: '6px 12px',
-                    borderRadius: '9999px',
-                    background: soundEnabled ? '#EAF2ED' : '#F4F0E8',
-                    border: soundEnabled ? '1px solid #2E5E4C' : '1px solid #E6E0D5',
-                    color: soundEnabled ? '#1E3A2F' : '#6F7D75',
-                    fontSize: '0.78rem',
-                    fontWeight: 700,
-                    cursor: 'pointer'
-                  }}
-                >
-                  {soundEnabled ? <Volume2 size={14} /> : <VolumeX size={14} />}
-                  <span>{soundEnabled ? 'Sound ON' : 'Sound OFF'}</span>
-                </button>
-              </div>
 
-              <div style={{ display: 'flex', gap: '10px', marginTop: '8px' }}>
+              <div style={{ display: 'flex', gap: '10px', marginTop: '12px' }}>
                 <a
                   href="tel:+917058830058"
                   className="btn-magnetic btn-crisis"

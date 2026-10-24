@@ -210,9 +210,6 @@ body {
     padding: 8px 14px 8px 16px !important;
     gap: 8px !important;
   }
-  .nav-audio-btn {
-    display: none !important;
-  }
   .nav-helpline-pill {
     display: none !important;
   }
@@ -223,38 +220,65 @@ body {
 }
 
 /* =======================================================
-   HERO 3-COLUMN DESKTOP GRID & SPACIOUS STATS PANEL
+   HERO 2-COLUMN MAIN + STATS ROW BELOW (Mobile & Tablet Friendly)
    ======================================================= */
-.hero-layout-grid {
+.hero-main-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 36px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.hero-text-block {
+  text-align: left;
+}
+
+/* Button Spacing: Clear separation between Make Application and Crisis Hotline */
+.hero-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Generous gap so buttons never touch */
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.hero-btn-apply {
+  padding: 14px 28px;
+  font-size: 0.92rem;
+  margin: 0 !important;
+}
+
+.hero-btn-crisis {
+  padding: 14px 24px;
+  font-size: 0.9rem;
+  margin: 0 !important;
+}
+
+.hero-checklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 0.86rem;
+  color: #5d6d65;
+}
+
+.hero-image-block {
+  display: flex;
+  justifyContent: center;
   align-items: center;
 }
 
-.hero-stats-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 32px; /* Generous separation so boxes never get too close */
-}
-
-.hero-stat-card {
-  padding: 36px 38px;
-  border-radius: 26px;
-  text-align: left;
-  background: #ffffff;
-  border: 1.5px solid #ece6db;
-  box-shadow: 0 10px 32px -8px rgba(30, 58, 47, 0.08), 0 2px 8px rgba(30, 58, 47, 0.03);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: all 0.3s ease;
+.hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
 }
 
 .hero-arched-frame {
   width: 100%;
-  height: 430px;
-  border-radius: 180px 180px 36px 36px;
+  height: 440px;
+  border-radius: 190px 190px 40px 40px;
   overflow: hidden;
   box-shadow: 0 20px 50px -12px rgba(30, 58, 47, 0.16);
   border: 5px solid #ffffff;
@@ -262,28 +286,135 @@ body {
   position: relative;
 }
 
-@media (min-width: 1024px) {
-  .hero-layout-grid {
-    grid-template-columns: 1.05fr 0.85fr 1.1fr;
-    gap: 40px; /* Balanced column separation giving stats ample width */
+/* Stats Row Below Section: Arranged properly across 3 cards */
+.hero-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.hero-stat-card {
+  padding: 22px 26px; /* Clean, compact padding without extra empty bloat */
+  border-radius: 20px;
+  text-align: left;
+  background: #ffffff;
+  border: 1.5px solid #ece6db;
+  box-shadow: 0 8px 24px -6px rgba(30, 58, 47, 0.06), 0 2px 6px rgba(30, 58, 47, 0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-stat-card:hover {
+  transform: translateY(-3px);
+  border-color: #c8ded1;
+  box-shadow: 0 14px 32px -8px rgba(30, 58, 47, 0.1);
+}
+
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1e3a2f;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.stat-symbol {
+  font-size: 1.6rem;
+  color: #2e5e4c;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #2e5e4c;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.stat-sub {
+  font-size: 0.88rem;
+  color: #4a5851;
+  line-height: 1.45;
+}
+
+/* Tablet Responsiveness (768px - 1023px) */
+@media (max-width: 1023px) {
+  .hero-main-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 38px;
   }
-  .hero-stats-panel {
-    display: flex !important;
-    flex-direction: column;
-    gap: 32px !important; /* Distinct vertical separation */
+  .hero-text-block {
+    text-align: center;
+  }
+  .hero-text-block .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-action-buttons {
+    justify-content: center;
+  }
+  .hero-checklist {
+    justify-content: center;
+  }
+  .hero-image-wrapper {
+    max-width: 320px;
+  }
+  .hero-arched-frame {
+    height: 380px;
+  }
+  .hero-stats-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .hero-stat-card {
+    padding: 18px 20px;
+  }
+  .stat-number {
+    font-size: 1.9rem;
   }
 }
 
-@media (max-width: 1023px) {
-  .hero-stats-panel {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 20px !important;
-    margin-top: 24px;
+/* Mobile Responsiveness (< 768px) */
+@media (max-width: 767px) {
+  .hero-main-grid {
+    gap: 32px;
+    margin-bottom: 30px;
+  }
+  .hero-arched-frame {
+    height: 320px;
+    border-radius: 150px 150px 30px 30px;
+  }
+  .hero-image-wrapper {
+    max-width: 270px;
+  }
+  .hero-action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .hero-action-buttons > * {
     width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-checklist {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero-stats-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
   .hero-stat-card {
-    padding: 24px 20px;
+    padding: 18px 20px;
+    text-align: center;
+    align-items: center;
   }
 }
 

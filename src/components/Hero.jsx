@@ -61,11 +61,11 @@ export default function Hero({ onOpenAdmissionModal }) {
     >
       <div className="container-custom" style={{ position: 'relative', zIndex: 1 }}>
         
-        {/* Top 3-Part Hero Grid */}
-        <div className="hero-layout-grid">
+        {/* Main 2-Column Hero: Text Block on one side, Image on other side */}
+        <div className="hero-main-grid">
           
           {/* Left Column: Editorial Headline & Actions */}
-          <div ref={leftColRef}>
+          <div ref={leftColRef} className="hero-text-block">
             {/* Subtitle Pill Badge */}
             <div style={{ marginBottom: '18px' }}>
               <div className="pill-badge sage">
@@ -76,9 +76,9 @@ export default function Hero({ onOpenAdmissionModal }) {
 
             {/* Editorial Heading */}
             <h1 
-              className="font-display" 
+              className="font-display hero-heading" 
               style={{ 
-                fontSize: 'clamp(2.1rem, 4.2vw, 3.6rem)', 
+                fontSize: 'clamp(2.2rem, 4.4vw, 3.8rem)', 
                 fontWeight: 800, 
                 lineHeight: 1.12,
                 color: '#182520',
@@ -93,25 +93,26 @@ export default function Hero({ onOpenAdmissionModal }) {
 
             {/* Description */}
             <p 
+              className="hero-description"
               style={{ 
-                fontSize: 'clamp(0.94rem, 1.1vw, 1.08rem)', 
+                fontSize: 'clamp(0.96rem, 1.15vw, 1.08rem)', 
                 color: '#4A5851', 
-                marginBottom: '26px',
+                marginBottom: '28px',
                 lineHeight: 1.68,
-                maxWidth: '520px'
+                maxWidth: '560px'
               }}
             >
               Since 1989, <strong>Anusaya Shikshan Prasarak Mandal (Reg. F 2405 MAH Nashik)</strong> has dedicated over 36 continuous years to society. Home of the government-approved <strong>Swami Narayan Nursing Institute</strong> and the life-saving <strong>Project Manobal</strong> suicide prevention initiative.
             </p>
 
-            {/* Pill Action Buttons */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center', marginBottom: '26px' }}>
+            {/* Pill Action Buttons with proper spacing */}
+            <div className="hero-action-buttons">
               <button
                 onClick={() => {
                   soundManager.playChime(660);
                   onOpenAdmissionModal();
                 }}
-                className="btn-magnetic btn-primary"
+                className="btn-magnetic btn-primary hero-btn-apply"
                 style={{ padding: '14px 28px', fontSize: '0.92rem' }}
               >
                 <span>Make Application</span>
@@ -121,8 +122,8 @@ export default function Hero({ onOpenAdmissionModal }) {
               <a
                 href="#manobal"
                 onClick={() => soundManager.playClick()}
-                className="btn-magnetic btn-crisis"
-                style={{ padding: '14px 22px', fontSize: '0.9rem' }}
+                className="btn-magnetic btn-crisis hero-btn-crisis"
+                style={{ padding: '14px 24px', fontSize: '0.9rem' }}
               >
                 <Heart size={15} />
                 <span>Crisis Hotline</span>
@@ -130,28 +131,22 @@ export default function Hero({ onOpenAdmissionModal }) {
             </div>
 
             {/* Verification Checklist */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', fontSize: '0.84rem', color: '#6F7D75' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <CheckCircle size={15} color="#22865E" />
+            <div className="hero-checklist">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <CheckCircle size={16} color="#22865E" />
                 <span>Govt. Approved (ANM & GNM)</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <CheckCircle size={15} color="#22865E" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <CheckCircle size={16} color="#22865E" />
                 <span>All 12th Streams Eligible</span>
               </div>
             </div>
           </div>
 
-          {/* Center Column: Arched Doctor Portrait */}
-          <div ref={centerImgRef} style={{ display: 'flex', justifyContent: 'center' }}>
-            <div 
-              style={{
-                position: 'relative',
-                width: '100%',
-                maxWidth: '340px'
-              }}
-            >
-              {/* Arched Oval Stadium Frame (Responsive Height) */}
+          {/* Right Column: Arched Doctor Portrait */}
+          <div ref={centerImgRef} className="hero-image-block">
+            <div className="hero-image-wrapper">
+              {/* Arched Oval Stadium Frame */}
               <div className="hero-arched-frame">
                 <img 
                   src="/images/nurse-portrait.jpg" 
@@ -176,119 +171,73 @@ export default function Hero({ onOpenAdmissionModal }) {
 
               {/* Floating Bottom Badge */}
               <div 
+                className="hero-image-badge"
                 style={{
                   position: 'absolute',
-                  bottom: '-12px',
+                  bottom: '-14px',
                   left: '50%',
                   transform: 'translateX(-50%)',
                   background: '#FFFFFF',
                   borderRadius: '9999px',
-                  padding: '7px 18px',
+                  padding: '8px 20px',
                   border: '1px solid #E6E0D5',
-                  boxShadow: '0 8px 20px rgba(30, 58, 47, 0.1)',
+                  boxShadow: '0 8px 24px rgba(30, 58, 47, 0.12)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
                   whiteSpace: 'nowrap'
                 }}
               >
-                <Stethoscope size={15} color="#1E3A2F" />
-                <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#182520' }}>
+                <Stethoscope size={16} color="#1E3A2F" />
+                <span style={{ fontSize: '0.82rem', fontWeight: 700, color: '#182520' }}>
                   Swami Narayan Nursing Institute
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: 3 Spacious Stat Cards */}
-          <div 
-            ref={rightStatsRef} 
-            className="hero-stats-panel"
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '32px'
-            }}
-          >
-            {/* Card 1 */}
-            <div 
-              className="hero-stat-card warm-card"
-              style={{
-                padding: '36px 38px',
-                borderRadius: '26px',
-                background: '#FFFFFF',
-                border: '1.5px solid #ECE6DB',
-                boxShadow: '0 10px 32px -8px rgba(30, 58, 47, 0.08), 0 2px 8px rgba(30, 58, 47, 0.03)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
-              }}
-            >
-              <div className="font-display" style={{ fontSize: '2.5rem', fontWeight: 800, color: '#1E3A2F', lineHeight: 1.1, marginBottom: '12px' }}>
-                36<span style={{ fontSize: '1.8rem', color: '#2E5E4C' }}>+</span>
-              </div>
-              <div style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '8px' }}>
-                Years of Service
-              </div>
-              <div style={{ fontSize: '0.92rem', color: '#4A5851', lineHeight: 1.55 }}>
-                Serving Maharashtra since 1989
-              </div>
-            </div>
+        </div>
 
-            {/* Card 2 */}
-            <div 
-              className="hero-stat-card warm-card"
-              style={{
-                padding: '36px 38px',
-                borderRadius: '26px',
-                background: '#FFFFFF',
-                border: '1.5px solid #ECE6DB',
-                boxShadow: '0 10px 32px -8px rgba(30, 58, 47, 0.08), 0 2px 8px rgba(30, 58, 47, 0.03)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
-              }}
-            >
-              <div className="font-display" style={{ fontSize: '2.5rem', fontWeight: 800, color: '#1E3A2F', lineHeight: 1.1, marginBottom: '12px' }}>
-                5,000<span style={{ fontSize: '1.8rem', color: '#22865E' }}>+</span>
-              </div>
-              <div style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '8px' }}>
-                Trained Graduates
-              </div>
-              <div style={{ fontSize: '0.92rem', color: '#4A5851', lineHeight: 1.55 }}>
-                In hospitals & health centers
-              </div>
+        {/* Stats Row Below the Section: Arranged properly across 3 cards with compact, clean padding */}
+        <div ref={rightStatsRef} className="hero-stats-row">
+          {/* Card 1 */}
+          <div className="hero-stat-card warm-card">
+            <div className="font-display stat-number">
+              36<span className="stat-symbol">+</span>
             </div>
-
-            {/* Card 3 */}
-            <div 
-              className="hero-stat-card warm-card"
-              style={{
-                padding: '36px 38px',
-                borderRadius: '26px',
-                background: '#FFFFFF',
-                border: '1.5px solid #ECE6DB',
-                boxShadow: '0 10px 32px -8px rgba(30, 58, 47, 0.08), 0 2px 8px rgba(30, 58, 47, 0.03)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
-              }}
-            >
-              <div className="font-display" style={{ fontSize: '2.4rem', fontWeight: 800, color: '#1E3A2F', lineHeight: 1.1, marginBottom: '12px' }}>
-                ₹34,000
-              </div>
-              <div style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '8px' }}>
-                Annual ANM Fee
-              </div>
-              <div style={{ fontSize: '0.92rem', color: '#4A5851', lineHeight: 1.55 }}>
-                Govt-subsidized rate for 2025–26
-              </div>
+            <div className="stat-label">
+              Years of Service
+            </div>
+            <div className="stat-sub">
+              Serving Maharashtra since 1989
             </div>
           </div>
 
+          {/* Card 2 */}
+          <div className="hero-stat-card warm-card">
+            <div className="font-display stat-number">
+              5,000<span className="stat-symbol" style={{ color: '#22865E' }}>+</span>
+            </div>
+            <div className="stat-label">
+              Trained Graduates
+            </div>
+            <div className="stat-sub">
+              In hospitals & health centers
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="hero-stat-card warm-card">
+            <div className="font-display stat-number">
+              ₹34,000
+            </div>
+            <div className="stat-label">
+              Annual ANM Fee
+            </div>
+            <div className="stat-sub">
+              Govt-subsidized rate for 2025–26
+            </div>
+          </div>
         </div>
 
       </div>
