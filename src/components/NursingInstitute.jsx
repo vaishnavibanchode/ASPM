@@ -300,23 +300,9 @@ export default function NursingInstitute({ onOpenAdmissionModal }) {
         </div>
 
         {/* 12th Stream Eligibility Banner */}
-        <div 
-          style={{
-            background: 'rgba(255, 255, 255, 0.08)',
-            border: '1px solid rgba(255, 255, 255, 0.15)',
-            borderRadius: '24px',
-            padding: '20px 30px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '16px',
-            maxWidth: '920px',
-            margin: '0 auto'
-          }}
-        >
+        <div className="nursing-eligibility-banner">
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <BadgeCheck size={22} color="#A7C9B8" />
+            <BadgeCheck size={22} color="#A7C9B8" style={{ flexShrink: 0 }} />
             <div>
               <div style={{ fontWeight: 700, fontSize: '0.95rem', color: '#FFFFFF' }}>
                 12th Standard Eligibility for Academic Year 2025-26
@@ -327,19 +313,9 @@ export default function NursingInstitute({ onOpenAdmissionModal }) {
             </div>
           </div>
 
-          <div style={{ display: 'flex', gap: '8px' }}>
+          <div className="nursing-stream-pills">
             {['Science', 'Commerce', 'Arts'].map((stream) => (
-              <span 
-                key={stream}
-                style={{
-                  background: 'rgba(255, 255, 255, 0.12)',
-                  color: '#FFFFFF',
-                  padding: '6px 14px',
-                  borderRadius: '9999px',
-                  fontSize: '0.8rem',
-                  fontWeight: 600
-                }}
-              >
+              <span key={stream} className="nursing-stream-pill">
                 ✓ {stream}
               </span>
             ))}

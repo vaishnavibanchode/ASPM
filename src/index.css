@@ -151,8 +151,32 @@ body {
   background: rgba(30, 58, 47, 0.08);
 }
 
+/* Mobile Hamburger Button (High contrast, clearly visible) */
 .mobile-menu-btn {
   display: none !important;
+  align-items: center;
+  gap: 6px;
+  background: #1e3a2f !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 8px 14px !important;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 0.82rem;
+  box-shadow: 0 4px 14px rgba(30, 58, 47, 0.2);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-menu-btn:hover {
+  background: #284c3d !important;
+  transform: translateY(-1px);
+}
+
+.mobile-menu-text {
+  display: inline-block;
+  letter-spacing: 0.02em;
 }
 
 .floating-header-inner {
@@ -160,9 +184,6 @@ body {
   gap: 12px;
 }
 
-.nav-audio-btn {
-  display: flex !important;
-}
 .nav-helpline-pill {
   display: inline-flex !important;
 }
@@ -194,7 +215,7 @@ body {
     display: none !important;
   }
   .mobile-menu-btn {
-    display: flex !important;
+    display: inline-flex !important;
   }
 }
 
@@ -206,16 +227,36 @@ body {
 }
 
 @media (max-width: 640px) {
+  .floating-header-bar {
+    padding: 0 12px !important;
+  }
   .floating-header-inner {
-    padding: 8px 14px 8px 16px !important;
+    padding: 7px 14px 7px 16px !important;
     gap: 8px !important;
   }
   .nav-helpline-pill {
     display: none !important;
   }
   .nav-apply-btn {
+    display: none !important; /* On mobile screens, focus cleanly on Logo + Hamburger Menu */
+  }
+  .mobile-menu-btn {
+    display: inline-flex !important;
     padding: 8px 14px !important;
-    font-size: 0.8rem !important;
+    font-size: 0.84rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .mobile-menu-text {
+    display: none;
+  }
+  .mobile-menu-btn {
+    width: 38px !important;
+    height: 38px !important;
+    padding: 0 !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
   }
 }
 
@@ -537,16 +578,227 @@ body {
   }
 }
 
-/* Fee Calculator Responsive Grid */
+/* Fee Calculator Component Responsive Styling */
+.fee-calculator-card {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 40px 36px;
+  border-radius: 32px;
+  background: #ffffff;
+  border: 1px solid #e6e0d5;
+  box-shadow: 0 20px 50px rgba(30, 58, 47, 0.08);
+}
+
 .fee-calculator-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
 }
+
 @media (min-width: 1024px) {
   .fee-calculator-grid {
     grid-template-columns: 1.25fr 1fr;
     gap: 40px;
+  }
+}
+
+.fee-stream-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.fee-stream-btn {
+  padding: 13px 10px;
+  border-radius: 16px;
+  border: 1px solid #e6dfd4;
+  background: #faf8f5;
+  color: #182520;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fee-stream-btn:hover {
+  background: #f3efe6;
+  border-color: #2e5e4c;
+}
+
+.fee-stream-btn.selected {
+  border: 2px solid #2e5e4c;
+  background: #eaf2ed;
+}
+
+.fee-stream-name {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #182520;
+}
+
+.fee-stream-badge {
+  font-size: 0.7rem;
+  color: #22865e;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.fee-course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.fee-course-btn {
+  padding: 18px 20px;
+  border-radius: 20px;
+  border: 1px solid #e6dfd4;
+  background: #faf8f5;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fee-course-btn:hover {
+  background: #f3efe6;
+  border-color: #2e5e4c;
+}
+
+.fee-course-btn.selected {
+  border: 2px solid #2e5e4c;
+  background: #eaf2ed;
+}
+
+.fee-course-pill {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #2e5e4c;
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  border: 1px solid #c8ded1;
+}
+
+.fee-facility-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: #faf8f5;
+  border: 1px solid #e6dfd4;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.fee-facility-item:hover {
+  background: #f5f0e6;
+  border-color: #d8cebf;
+}
+
+.fee-facility-price {
+  font-weight: 800;
+  color: #1e3a2f;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.fee-summary-box {
+  background: #f8f5ee;
+  border: 1.5px solid #e6dfd4;
+  border-radius: 28px;
+  padding: 30px;
+  box-shadow: 0 12px 30px rgba(30, 58, 47, 0.05);
+}
+
+/* Mobile & Tablet Responsive Rules for Fee Calculator */
+@media (max-width: 768px) {
+  .fee-calculator-card {
+    padding: 22px 16px !important;
+    border-radius: 24px !important;
+  }
+  .fee-stream-grid {
+    gap: 8px !important;
+  }
+  .fee-stream-btn {
+    padding: 10px 4px !important;
+  }
+  .fee-stream-name {
+    font-size: 0.85rem !important;
+  }
+  .fee-stream-badge {
+    font-size: 0.64rem !important;
+  }
+  .fee-course-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .fee-course-btn {
+    padding: 14px 16px !important;
+  }
+  .fee-facility-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    padding: 12px 14px !important;
+  }
+  .fee-facility-price {
+    align-self: flex-end;
+    font-size: 0.86rem !important;
+  }
+  .fee-summary-box {
+    padding: 20px 16px !important;
+    border-radius: 22px !important;
+  }
+}
+
+/* 12th Stream Eligibility Banner Responsive */
+.nursing-eligibility-banner {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 20px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.nursing-stream-pills {
+  display: flex;
+  gap: 8px;
+}
+
+.nursing-stream-pill {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .nursing-eligibility-banner {
+    padding: 16px 18px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+  .nursing-stream-pills {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+  .nursing-stream-pill {
+    padding: 5px 10px !important;
+    font-size: 0.74rem !important;
   }
 }
 

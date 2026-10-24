@@ -52,7 +52,7 @@ export default function FeeCalculator({ onOpenAdmissionModal }) {
       id="calculator" 
       style={{
         position: 'relative',
-        padding: '120px 0',
+        padding: 'clamp(60px, 8vw, 110px) 0',
         background: '#FBF9F5',
         overflow: 'hidden'
       }}
@@ -60,53 +60,42 @@ export default function FeeCalculator({ onOpenAdmissionModal }) {
       <div className="container-custom" style={{ position: 'relative', zIndex: 1 }}>
         
         {/* Section Header */}
-        <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 60px auto' }}>
-          <div className="pill-badge sage" style={{ marginBottom: '16px' }}>
+        <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 40px auto' }}>
+          <div className="pill-badge sage" style={{ marginBottom: '14px' }}>
             <Calculator size={14} />
             <span>Academic Session 2025 - 2026</span>
           </div>
           <h2 
             className="font-display" 
             style={{ 
-              fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)', 
+              fontSize: 'clamp(2rem, 3.8vw, 3.2rem)', 
               fontWeight: 800, 
               lineHeight: 1.15,
               color: '#182520',
-              marginBottom: '18px'
+              marginBottom: '16px'
             }}
           >
             Transparent Fee & <br />
             <span style={{ color: '#2E5E4C', fontStyle: 'italic', fontFamily: 'var(--font-serif)' }}>Eligibility Estimator</span>
           </h2>
-          <p style={{ fontSize: '1.05rem', color: '#4A5851', lineHeight: 1.7 }}>
+          <p style={{ fontSize: 'clamp(0.92rem, 1.1vw, 1.05rem)', color: '#4A5851', lineHeight: 1.68 }}>
             Plan your nursing education with complete transparency. Government-subsidized rates with zero hidden capitation charges.
           </p>
         </div>
 
-        {/* Calculator Grid */}
-        <div 
-          className="warm-card"
-          style={{
-            maxWidth: '1080px',
-            margin: '0 auto',
-            padding: 'clamp(24px, 5vw, 44px) clamp(18px, 4vw, 38px)',
-            borderRadius: '32px',
-            background: '#FFFFFF',
-            border: '1px solid #E6E0D5',
-            boxShadow: '0 20px 50px rgba(30, 58, 47, 0.08)'
-          }}
-        >
+        {/* Calculator Card */}
+        <div className="warm-card fee-calculator-card">
           <div className="fee-calculator-grid">
             
             {/* Left Controls */}
             <div>
               
               {/* Step 1: 12th Stream */}
-              <div style={{ marginBottom: '28px' }}>
-                <label style={{ display: 'block', fontSize: '0.84rem', fontWeight: 700, color: '#1E3A2F', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
+              <div style={{ marginBottom: '26px' }}>
+                <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: '#1E3A2F', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
                   1. Select Your 12th Standard (10+2) Background
                 </label>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
+                <div className="fee-stream-grid">
                   {['Science', 'Commerce', 'Arts'].map((stream) => {
                     const isSelected = selectedStream === stream;
                     return (
@@ -116,24 +105,10 @@ export default function FeeCalculator({ onOpenAdmissionModal }) {
                           soundManager.playClick();
                           setSelectedStream(stream);
                         }}
-                        style={{
-                          padding: '14px',
-                          borderRadius: '16px',
-                          border: isSelected ? '2px solid #2E5E4C' : '1px solid #E6DFD4',
-                          background: isSelected ? '#EAF2ED' : '#FAF8F5',
-                          color: '#182520',
-                          fontWeight: 700,
-                          fontSize: '0.95rem',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'center',
-                          gap: '4px',
-                          transition: 'all 0.2s'
-                        }}
+                        className={`fee-stream-btn ${isSelected ? 'selected' : ''}`}
                       >
-                        <span>{stream}</span>
-                        <span style={{ fontSize: '0.72rem', color: '#22865E', fontWeight: 700 }}>
+                        <span className="fee-stream-name">{stream}</span>
+                        <span className="fee-stream-badge">
                           ✓ 100% Eligible
                         </span>
                       </button>
@@ -143,31 +118,26 @@ export default function FeeCalculator({ onOpenAdmissionModal }) {
               </div>
 
               {/* Step 2: Course Selection */}
-              <div style={{ marginBottom: '28px' }}>
-                <label style={{ display: 'block', fontSize: '0.84rem', fontWeight: 700, color: '#1E3A2F', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
+              <div style={{ marginBottom: '26px' }}>
+                <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: '#1E3A2F', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
                   2. Choose Nursing Program
                 </label>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px' }}>
+                <div className="fee-course-grid">
                   <button
                     onClick={() => {
                       soundManager.playClick();
                       setSelectedCourse('anm');
                     }}
-                    style={{
-                      padding: '20px',
-                      borderRadius: '20px',
-                      border: selectedCourse === 'anm' ? '2px solid #2E5E4C' : '1px solid #E6DFD4',
-                      background: selectedCourse === 'anm' ? '#EAF2ED' : '#FAF8F5',
-                      textAlign: 'left',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s'
-                    }}
+                    className={`fee-course-btn ${selectedCourse === 'anm' ? 'selected' : ''}`}
                   >
-                    <div style={{ fontWeight: 800, fontSize: '1.2rem', color: '#182520' }}>
-                      ANM Nursing
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
+                      <span style={{ fontWeight: 800, fontSize: '1.12rem', color: '#182520' }}>
+                        ANM Nursing
+                      </span>
+                      <span className="fee-course-pill">₹34,000 / Yr</span>
                     </div>
-                    <div style={{ fontSize: '0.82rem', color: '#4A5851', marginTop: '3px' }}>
-                      2 Years Diploma • ₹34,000 / Year
+                    <div style={{ fontSize: '0.82rem', color: '#4A5851' }}>
+                      2 Years Diploma • Primary Healthcare & Midwifery
                     </div>
                   </button>
 
@@ -176,21 +146,16 @@ export default function FeeCalculator({ onOpenAdmissionModal }) {
                       soundManager.playClick();
                       setSelectedCourse('gnm');
                     }}
-                    style={{
-                      padding: '20px',
-                      borderRadius: '20px',
-                      border: selectedCourse === 'gnm' ? '2px solid #2E5E4C' : '1px solid #E6DFD4',
-                      background: selectedCourse === 'gnm' ? '#EAF2ED' : '#FAF8F5',
-                      textAlign: 'left',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s'
-                    }}
+                    className={`fee-course-btn ${selectedCourse === 'gnm' ? 'selected' : ''}`}
                   >
-                    <div style={{ fontWeight: 800, fontSize: '1.2rem', color: '#182520' }}>
-                      GNM Nursing
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
+                      <span style={{ fontWeight: 800, fontSize: '1.12rem', color: '#182520' }}>
+                        GNM Nursing
+                      </span>
+                      <span className="fee-course-pill">₹44,000 / Yr</span>
                     </div>
-                    <div style={{ fontSize: '0.82rem', color: '#4A5851', marginTop: '3px' }}>
-                      3 Years Comprehensive • ₹44,000 / Year
+                    <div style={{ fontSize: '0.82rem', color: '#4A5851' }}>
+                      3 Years Comprehensive • Hospital Clinical & Trauma Care
                     </div>
                   </button>
                 </div>
@@ -198,89 +163,56 @@ export default function FeeCalculator({ onOpenAdmissionModal }) {
 
               {/* Step 3: Optional Facilities */}
               <div>
-                <label style={{ display: 'block', fontSize: '0.84rem', fontWeight: 700, color: '#1E3A2F', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
+                <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: '#1E3A2F', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
                   3. Optional Academic & Hostelry Facilities
                 </label>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <label 
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      padding: '14px 18px',
-                      borderRadius: '16px',
-                      background: '#FAF8F5',
-                      border: '1px solid #E6DFD4',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <label className="fee-facility-item">
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                       <input 
                         type="checkbox" 
                         checked={includeKit} 
                         onChange={(e) => setIncludeKit(e.target.checked)}
-                        style={{ width: '18px', height: '18px', accentColor: '#1E3A2F' }}
+                        style={{ width: '18px', height: '18px', accentColor: '#1E3A2F', marginTop: '2px', flexShrink: 0 }}
                       />
                       <div>
-                        <div style={{ fontWeight: 700, fontSize: '0.92rem', color: '#182520' }}>Clinical Practice Kit & Uniforms</div>
+                        <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#182520' }}>Clinical Practice Kit & Uniforms</div>
                         <div style={{ fontSize: '0.78rem', color: '#6F7D75' }}>Stethoscope, BP kit, medical scrubs & lab badge (One-time)</div>
                       </div>
                     </div>
-                    <span style={{ fontWeight: 800, color: '#1E3A2F', fontSize: '0.92rem' }}>+₹{current.kitCost}</span>
+                    <span className="fee-facility-price">+₹{current.kitCost.toLocaleString('en-IN')}</span>
                   </label>
 
-                  <label 
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      padding: '14px 18px',
-                      borderRadius: '16px',
-                      background: '#FAF8F5',
-                      border: '1px solid #E6DFD4',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <label className="fee-facility-item">
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                       <input 
                         type="checkbox" 
                         checked={includeLibrary} 
                         onChange={(e) => setIncludeLibrary(e.target.checked)}
-                        style={{ width: '18px', height: '18px', accentColor: '#1E3A2F' }}
+                        style={{ width: '18px', height: '18px', accentColor: '#1E3A2F', marginTop: '2px', flexShrink: 0 }}
                       />
                       <div>
-                        <div style={{ fontWeight: 700, fontSize: '0.92rem', color: '#182520' }}>Medical Library & Digital Journals Access</div>
+                        <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#182520' }}>Medical Library & Digital Journals Access</div>
                         <div style={{ fontSize: '0.78rem', color: '#6F7D75' }}>Reference textbooks and curriculum resources ({current.durationYears} Years)</div>
                       </div>
                     </div>
-                    <span style={{ fontWeight: 800, color: '#1E3A2F', fontSize: '0.92rem' }}>+₹{current.annualLibrary * current.durationYears}</span>
+                    <span className="fee-facility-price">+₹{(current.annualLibrary * current.durationYears).toLocaleString('en-IN')}</span>
                   </label>
 
-                  <label 
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      padding: '14px 18px',
-                      borderRadius: '16px',
-                      background: '#FAF8F5',
-                      border: '1px solid #E6DFD4',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <label className="fee-facility-item">
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                       <input 
                         type="checkbox" 
                         checked={includeHostel} 
                         onChange={(e) => setIncludeHostel(e.target.checked)}
-                        style={{ width: '18px', height: '18px', accentColor: '#1E3A2F' }}
+                        style={{ width: '18px', height: '18px', accentColor: '#1E3A2F', marginTop: '2px', flexShrink: 0 }}
                       />
                       <div>
-                        <div style={{ fontWeight: 700, fontSize: '0.92rem', color: '#182520' }}>Hostel Lodging & Mess Option</div>
+                        <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#182520' }}>Hostel Lodging & Mess Option</div>
                         <div style={{ fontSize: '0.78rem', color: '#6F7D75' }}>Optional accommodation assistance near Nashik campus (Est. 10 mos/yr)</div>
                       </div>
                     </div>
-                    <span style={{ fontWeight: 800, color: '#1E3A2F', fontSize: '0.92rem' }}>
+                    <span className="fee-facility-price">
                       +₹{(current.monthlyHostel * 10 * current.durationYears).toLocaleString('en-IN')}
                     </span>
                   </label>
@@ -291,28 +223,20 @@ export default function FeeCalculator({ onOpenAdmissionModal }) {
 
             {/* Right Summary Breakdown */}
             <div>
-              <div 
-                style={{
-                  background: '#F8F5EE',
-                  border: '1.5px solid #E6DFD4',
-                  borderRadius: '28px',
-                  padding: '32px',
-                  boxShadow: '0 12px 30px rgba(30, 58, 47, 0.05)'
-                }}
-              >
+              <div className="fee-summary-box">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#22865E', fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', marginBottom: '8px' }}>
                   <ShieldCheck size={16} />
                   <span>100% Eligible: 12th ({selectedStream})</span>
                 </div>
 
-                <div className="font-display" style={{ fontSize: '1.5rem', fontWeight: 800, color: '#182520', marginBottom: '4px' }}>
+                <div className="font-display" style={{ fontSize: '1.45rem', fontWeight: 800, color: '#182520', marginBottom: '4px' }}>
                   {current.name}
                 </div>
-                <div style={{ fontSize: '0.84rem', color: '#6F7D75', marginBottom: '22px' }}>
+                <div style={{ fontSize: '0.82rem', color: '#6F7D75', marginBottom: '18px' }}>
                   Swami Narayan Nursing Institute • Academic Year 2025-26
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', borderTop: '1px solid #E6DFD4', borderBottom: '1px solid #E6DFD4', padding: '16px 0', marginBottom: '20px', fontSize: '0.9rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', borderTop: '1px solid #E6DFD4', borderBottom: '1px solid #E6DFD4', padding: '16px 0', marginBottom: '18px', fontSize: '0.88rem' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', color: '#4A5851' }}>
                     <span>Tuition ({current.durationYears} Yrs @ ₹{current.annualTuition.toLocaleString('en-IN')}/yr):</span>
                     <span style={{ color: '#182520', fontWeight: 700 }}>₹{tuitionTotal.toLocaleString('en-IN')}</span>
@@ -341,14 +265,14 @@ export default function FeeCalculator({ onOpenAdmissionModal }) {
                 </div>
 
                 {/* Grand Total */}
-                <div style={{ marginBottom: '24px' }}>
-                  <div style={{ fontSize: '0.78rem', textTransform: 'uppercase', color: '#6F7D75', fontWeight: 700 }}>
+                <div style={{ marginBottom: '20px' }}>
+                  <div style={{ fontSize: '0.76rem', textTransform: 'uppercase', color: '#6F7D75', fontWeight: 700 }}>
                     Estimated Total Course Investment
                   </div>
-                  <div className="font-display" style={{ fontSize: '2.5rem', fontWeight: 800, color: '#1E3A2F' }}>
+                  <div className="font-display" style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', fontWeight: 800, color: '#1E3A2F', lineHeight: 1.1, marginTop: '2px' }}>
                     ₹{grandTotal.toLocaleString('en-IN')}
                   </div>
-                  <div style={{ fontSize: '0.84rem', color: '#22865E', fontWeight: 600, marginTop: '2px' }}>
+                  <div style={{ fontSize: '0.82rem', color: '#22865E', fontWeight: 600, marginTop: '4px' }}>
                     1st Year Initial Due: ₹{firstYearInvestment.toLocaleString('en-IN')} (Easy Installments)
                   </div>
                 </div>
@@ -359,13 +283,13 @@ export default function FeeCalculator({ onOpenAdmissionModal }) {
                     onOpenAdmissionModal(selectedCourse);
                   }}
                   className="btn-magnetic btn-primary"
-                  style={{ width: '100%', padding: '16px', fontSize: '1rem' }}
+                  style={{ width: '100%', padding: '15px', fontSize: '0.94rem', whiteSpace: 'normal', lineHeight: 1.3 }}
                 >
-                  <Sparkles size={18} />
+                  <Sparkles size={16} />
                   <span>Reserve Seat with This Breakdown</span>
                 </button>
 
-                <div style={{ textAlign: 'center', marginTop: '12px', fontSize: '0.74rem', color: '#78867E' }}>
+                <div style={{ textAlign: 'center', marginTop: '12px', fontSize: '0.72rem', color: '#78867E' }}>
                   Registered Public Trust F 2405 MAH Nashik • Subsidized Govt. Rate
                 </div>
               </div>
