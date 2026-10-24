@@ -281,6 +281,7 @@ body {
   align-items: center;
   gap: 16px; /* Generous gap so buttons never touch */
   flex-wrap: wrap;
+  margin-top: 14px;
   margin-bottom: 28px;
 }
 
@@ -316,14 +317,14 @@ body {
 .hero-image-wrapper {
   position: relative;
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
 .hero-arched-frame {
   width: 100%;
-  height: 440px;
-  border-radius: 190px 190px 40px 40px;
+  height: 485px;
+  border-radius: 200px 200px 44px 44px;
   overflow: hidden;
   box-shadow: 0 20px 50px -12px rgba(30, 58, 47, 0.16);
   border: 5px solid #ffffff;
@@ -417,12 +418,12 @@ body {
     text-align: center !important;
   }
   .hero-image-wrapper {
-    max-width: 320px !important;
+    max-width: 350px !important;
     margin: 0 auto !important;
   }
   .hero-arched-frame {
     margin: 0 auto !important;
-    height: 380px !important;
+    height: 420px !important;
   }
   .hero-stats-row {
     grid-template-columns: repeat(3, 1fr);
@@ -453,13 +454,13 @@ body {
     text-align: center !important;
   }
   .hero-image-wrapper {
-    max-width: 270px !important;
+    max-width: 290px !important;
     margin: 0 auto !important;
   }
   .hero-arched-frame {
     margin: 0 auto !important;
-    height: 320px !important;
-    border-radius: 150px 150px 30px 30px !important;
+    height: 350px !important;
+    border-radius: 160px 160px 34px 34px !important;
   }
   .hero-image-badge {
     white-space: nowrap !important;
@@ -471,6 +472,7 @@ body {
     transform: translateX(-50%) !important;
   }
   .hero-action-buttons {
+    margin-top: 14px;
     flex-direction: column;
     align-items: stretch;
     gap: 12px;

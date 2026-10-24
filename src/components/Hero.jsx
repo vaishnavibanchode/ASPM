@@ -97,7 +97,7 @@ export default function Hero({ onOpenAdmissionModal }) {
               style={{ 
                 fontSize: 'clamp(0.96rem, 1.15vw, 1.08rem)', 
                 color: '#4A5851', 
-                marginBottom: '28px',
+                marginBottom: '32px',
                 lineHeight: 1.68,
                 maxWidth: '560px'
               }}
@@ -105,8 +105,14 @@ export default function Hero({ onOpenAdmissionModal }) {
               Since 1989, <strong>Anusaya Shikshan Prasarak Mandal (Reg. F 2405 MAH Nashik)</strong> has dedicated over 36 continuous years to society. Home of the government-approved <strong>Swami Narayan Nursing Institute</strong> and the life-saving <strong>Project Manobal</strong> suicide prevention initiative.
             </p>
 
-            {/* Pill Action Buttons with proper spacing */}
-            <div className="hero-action-buttons">
+            {/* Pill Action Buttons with proper spacing and top margin */}
+            <div 
+              className="hero-action-buttons"
+              style={{
+                marginTop: '14px',
+                marginBottom: '28px'
+              }}
+            >
               <button
                 onClick={() => {
                   soundManager.playChime(660);
@@ -160,7 +166,7 @@ export default function Hero({ onOpenAdmissionModal }) {
               style={{
                 position: 'relative',
                 width: '100%',
-                maxWidth: '350px',
+                maxWidth: '400px',
                 margin: '0 auto'
               }}
             >
