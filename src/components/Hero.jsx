@@ -201,42 +201,89 @@ export default function Hero({ onOpenAdmissionModal }) {
           </div>
 
           {/* Right Column: 3 Spacious Stat Cards */}
-          <div ref={rightStatsRef} className="hero-stats-panel">
+          <div 
+            ref={rightStatsRef} 
+            className="hero-stats-panel"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '32px'
+            }}
+          >
             {/* Card 1 */}
-            <div className="hero-stat-card warm-card">
-              <div className="font-display" style={{ fontSize: 'clamp(2.2rem, 3.5vw, 2.8rem)', fontWeight: 800, color: '#1E3A2F', lineHeight: 1, marginBottom: '10px' }}>
+            <div 
+              className="hero-stat-card warm-card"
+              style={{
+                padding: '36px 38px',
+                borderRadius: '26px',
+                background: '#FFFFFF',
+                border: '1.5px solid #ECE6DB',
+                boxShadow: '0 10px 32px -8px rgba(30, 58, 47, 0.08), 0 2px 8px rgba(30, 58, 47, 0.03)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+              }}
+            >
+              <div className="font-display" style={{ fontSize: '2.5rem', fontWeight: 800, color: '#1E3A2F', lineHeight: 1.1, marginBottom: '12px' }}>
                 36<span style={{ fontSize: '1.8rem', color: '#2E5E4C' }}>+</span>
               </div>
-              <div style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '6px' }}>
+              <div style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '8px' }}>
                 Years of Service
               </div>
-              <div style={{ fontSize: '0.88rem', color: '#4A5851', lineHeight: 1.48 }}>
+              <div style={{ fontSize: '0.92rem', color: '#4A5851', lineHeight: 1.55 }}>
                 Serving Maharashtra since 1989
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="hero-stat-card warm-card">
-              <div className="font-display" style={{ fontSize: 'clamp(2.2rem, 3.5vw, 2.8rem)', fontWeight: 800, color: '#1E3A2F', lineHeight: 1, marginBottom: '10px' }}>
+            <div 
+              className="hero-stat-card warm-card"
+              style={{
+                padding: '36px 38px',
+                borderRadius: '26px',
+                background: '#FFFFFF',
+                border: '1.5px solid #ECE6DB',
+                boxShadow: '0 10px 32px -8px rgba(30, 58, 47, 0.08), 0 2px 8px rgba(30, 58, 47, 0.03)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+              }}
+            >
+              <div className="font-display" style={{ fontSize: '2.5rem', fontWeight: 800, color: '#1E3A2F', lineHeight: 1.1, marginBottom: '12px' }}>
                 5,000<span style={{ fontSize: '1.8rem', color: '#22865E' }}>+</span>
               </div>
-              <div style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '6px' }}>
+              <div style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '8px' }}>
                 Trained Graduates
               </div>
-              <div style={{ fontSize: '0.88rem', color: '#4A5851', lineHeight: 1.48 }}>
+              <div style={{ fontSize: '0.92rem', color: '#4A5851', lineHeight: 1.55 }}>
                 In hospitals & health centers
               </div>
             </div>
 
             {/* Card 3 */}
-            <div className="hero-stat-card warm-card">
-              <div className="font-display" style={{ fontSize: 'clamp(2.1rem, 3.3vw, 2.6rem)', fontWeight: 800, color: '#1E3A2F', lineHeight: 1, marginBottom: '10px' }}>
+            <div 
+              className="hero-stat-card warm-card"
+              style={{
+                padding: '36px 38px',
+                borderRadius: '26px',
+                background: '#FFFFFF',
+                border: '1.5px solid #ECE6DB',
+                boxShadow: '0 10px 32px -8px rgba(30, 58, 47, 0.08), 0 2px 8px rgba(30, 58, 47, 0.03)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+              }}
+            >
+              <div className="font-display" style={{ fontSize: '2.4rem', fontWeight: 800, color: '#1E3A2F', lineHeight: 1.1, marginBottom: '12px' }}>
                 ₹34,000
               </div>
-              <div style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '6px' }}>
+              <div style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '8px' }}>
                 Annual ANM Fee
               </div>
-              <div style={{ fontSize: '0.88rem', color: '#4A5851', lineHeight: 1.48 }}>
+              <div style={{ fontSize: '0.92rem', color: '#4A5851', lineHeight: 1.55 }}>
                 Govt-subsidized rate for 2025–26
               </div>
             </div>

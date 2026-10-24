@@ -74,6 +74,8 @@ export default function Navbar({ onOpenAdmissionModal }) {
           left: 0,
           right: 0,
           zIndex: 1000,
+          padding: '0 20px',
+          boxSizing: 'border-box',
           transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       >
@@ -97,6 +99,8 @@ export default function Navbar({ onOpenAdmissionModal }) {
             maxWidth: '1360px',
             margin: '0 auto',
             width: '100%',
+            padding: isScrolled ? '7px 22px 7px 22px' : '9px 26px 9px 24px',
+            boxSizing: 'border-box',
             transition: 'all 0.3s ease'
           }}
         >
@@ -116,8 +120,8 @@ export default function Navbar({ onOpenAdmissionModal }) {
           >
             <div 
               style={{
-                width: '40px',
-                height: '40px',
+                width: '38px',
+                height: '38px',
                 borderRadius: '50%',
                 background: '#EAF2ED',
                 border: '1.5px solid #C8DED1',
@@ -127,11 +131,11 @@ export default function Navbar({ onOpenAdmissionModal }) {
                 flexShrink: 0
               }}
             >
-              <GraduationCap size={20} color="#1E3A2F" />
+              <GraduationCap size={19} color="#1E3A2F" />
             </div>
             <div style={{ whiteSpace: 'nowrap' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-                <span className="font-display" style={{ fontWeight: 800, fontSize: '1.12rem', color: '#182520', letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>
+                <span className="font-display" style={{ fontWeight: 800, fontSize: '1.1rem', color: '#182520', letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>
                   ASPM <span style={{ color: '#2E5E4C' }}>INDIA</span>
                 </span>
                 <span className="pulse-dot" />
@@ -156,16 +160,16 @@ export default function Navbar({ onOpenAdmissionModal }) {
             ))}
           </nav>
 
-          {/* Right Action Cluster (Single Line, Comfortable Padding) */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0, whiteSpace: 'nowrap' }}>
+          {/* Right Action Cluster (Comfortably inset from the capsule curve) */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0, whiteSpace: 'nowrap', paddingRight: '2px' }}>
             {/* Audio Toggle */}
             <button
               onClick={toggleSound}
               className="nav-audio-btn"
               title={soundEnabled ? 'Mute sound' : 'Enable sound'}
               style={{
-                width: '38px',
-                height: '38px',
+                width: '36px',
+                height: '36px',
                 borderRadius: '50%',
                 background: soundEnabled ? '#EAF2ED' : '#F4F0E8',
                 border: soundEnabled ? '1px solid #2E5E4C' : '1px solid #E6E0D5',
@@ -177,7 +181,7 @@ export default function Navbar({ onOpenAdmissionModal }) {
                 transition: 'all 0.2s ease'
               }}
             >
-              {soundEnabled ? <Volume2 size={16} /> : <VolumeX size={16} />}
+              {soundEnabled ? <Volume2 size={15} /> : <VolumeX size={15} />}
             </button>
 
             {/* Helpline Pill */}
@@ -187,21 +191,21 @@ export default function Navbar({ onOpenAdmissionModal }) {
               className="nav-helpline-pill"
               style={{
                 alignItems: 'center',
-                gap: '8px',
-                padding: '9px 18px',
+                gap: '7px',
+                padding: '8px 16px',
                 borderRadius: '9999px',
                 background: 'var(--accent-coral-light)',
                 border: '1px solid var(--accent-coral-border)',
                 color: 'var(--accent-coral)',
                 textDecoration: 'none',
-                fontSize: '0.82rem',
+                fontSize: '0.8rem',
                 fontWeight: 700,
                 flexShrink: 0,
                 whiteSpace: 'nowrap',
                 transition: 'all 0.2s ease'
               }}
             >
-              <PhoneCall size={14} color="var(--accent-coral)" />
+              <PhoneCall size={13} color="var(--accent-coral)" />
               <span>Helpline</span>
             </a>
 
@@ -213,13 +217,14 @@ export default function Navbar({ onOpenAdmissionModal }) {
               }}
               className="btn-magnetic btn-primary nav-apply-btn"
               style={{
-                padding: '10px 20px',
-                fontSize: '0.85rem',
+                padding: '9px 18px',
+                fontSize: '0.84rem',
                 flexShrink: 0,
-                whiteSpace: 'nowrap'
+                whiteSpace: 'nowrap',
+                marginRight: '2px'
               }}
             >
-              <Sparkles size={15} />
+              <Sparkles size={14} />
               <span>Apply 2025</span>
             </button>
 
@@ -231,8 +236,8 @@ export default function Navbar({ onOpenAdmissionModal }) {
               }}
               className="mobile-menu-btn"
               style={{
-                width: '40px',
-                height: '40px',
+                width: '38px',
+                height: '38px',
                 borderRadius: '50%',
                 background: '#F4F0E8',
                 border: '1px solid #E6E0D5',
@@ -243,7 +248,7 @@ export default function Navbar({ onOpenAdmissionModal }) {
                 flexShrink: 0
               }}
             >
-              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </div>
