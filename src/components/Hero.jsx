@@ -76,14 +76,14 @@ export default function Hero({ onOpenAdmissionModal }) {
 
             {/* Editorial Heading */}
             <h1 
-              className="font-display hero-heading" 
+              className="font-display hero-heading hero-title" 
               style={{ 
-                fontSize: 'clamp(2.2rem, 4.4vw, 3.8rem)', 
+                fontSize: 'clamp(2.6rem, 5.2vw, 4.4rem)', 
                 fontWeight: 800, 
-                lineHeight: 1.12,
+                lineHeight: 1.1,
                 color: '#182520',
-                marginBottom: '18px',
-                letterSpacing: '-0.03em'
+                marginBottom: '20px',
+                letterSpacing: '-0.035em'
               }}
             >
               Destination For <br />

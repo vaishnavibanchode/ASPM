@@ -66,13 +66,14 @@ export default function FeeCalculator({ onOpenAdmissionModal }) {
             <span>Academic Session 2025 - 2026</span>
           </div>
           <h2 
-            className="font-display" 
+            className="font-display section-heading" 
             style={{ 
-              fontSize: 'clamp(2rem, 3.8vw, 3.2rem)', 
+              fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)', 
               fontWeight: 800, 
               lineHeight: 1.15,
               color: '#182520',
-              marginBottom: '16px'
+              marginBottom: '18px',
+              letterSpacing: '-0.025em'
             }}
           >
             Transparent Fee & <br />

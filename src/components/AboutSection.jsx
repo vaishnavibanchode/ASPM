@@ -44,13 +44,14 @@ export default function AboutSection() {
           {/* Left Narrative with Vision & Mission Columns */}
           <div>
             <h2 
-              className="font-display" 
+              className="font-display section-heading" 
               style={{ 
-                fontSize: 'clamp(2.2rem, 3.6vw, 3.2rem)', 
+                fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)', 
                 fontWeight: 800, 
                 lineHeight: 1.15,
                 color: '#182520',
-                marginBottom: '20px'
+                marginBottom: '18px',
+                letterSpacing: '-0.025em'
               }}
             >
               Over 36 Years of Transforming <br />

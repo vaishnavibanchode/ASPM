@@ -58,13 +58,14 @@ export default function NursingInstitute({ onOpenAdmissionModal }) {
           </div>
 
           <h2 
-            className="font-display" 
+            className="font-display section-heading" 
             style={{ 
               fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)', 
               fontWeight: 800, 
               lineHeight: 1.15,
               color: '#FFFFFF',
-              marginBottom: '18px'
+              marginBottom: '18px',
+              letterSpacing: '-0.025em'
             }}
           >
             We Provide The Best <br />

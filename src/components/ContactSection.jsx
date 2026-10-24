@@ -65,13 +65,14 @@ export default function ContactSection() {
             <span>Connect & Campus Location</span>
           </div>
           <h2 
-            className="font-display" 
+            className="font-display section-heading" 
             style={{ 
               fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)', 
               fontWeight: 800, 
               lineHeight: 1.15,
               color: '#182520',
-              marginBottom: '18px'
+              marginBottom: '18px',
+              letterSpacing: '-0.025em'
             }}
           >
             Get in Touch With <br />
