@@ -89,17 +89,17 @@ export default function FeeCalculator({ onOpenAdmissionModal }) {
           style={{
             maxWidth: '1080px',
             margin: '0 auto',
-            padding: '48px 40px',
-            borderRadius: '36px',
+            padding: 'clamp(24px, 5vw, 44px) clamp(18px, 4vw, 38px)',
+            borderRadius: '32px',
             background: '#FFFFFF',
             border: '1px solid #E6E0D5',
             boxShadow: '0 20px 50px rgba(30, 58, 47, 0.08)'
           }}
         >
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '40px' }}>
+          <div className="fee-calculator-grid">
             
             {/* Left Controls */}
-            <div style={{ gridColumn: 'span 12' }} className="lg:col-span-7">
+            <div>
               
               {/* Step 1: 12th Stream */}
               <div style={{ marginBottom: '28px' }}>
@@ -290,7 +290,7 @@ export default function FeeCalculator({ onOpenAdmissionModal }) {
             </div>
 
             {/* Right Summary Breakdown */}
-            <div style={{ gridColumn: 'span 12' }} className="lg:col-span-5">
+            <div>
               <div 
                 style={{
                   background: '#F8F5EE',

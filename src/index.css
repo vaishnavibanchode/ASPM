@@ -119,7 +119,7 @@ body {
 }
 
 /* =======================================================
-   NAVBAR RESPONSIVE CLASSES (Spacious, Generous Padding)
+   NAVBAR RESPONSIVE CLASSES (Spacious & Mobile-Optimized)
    ======================================================= */
 .desktop-nav-menu {
   display: flex;
@@ -155,6 +155,16 @@ body {
   display: none !important;
 }
 
+.nav-audio-btn {
+  display: flex !important;
+}
+.nav-helpline-pill {
+  display: inline-flex !important;
+}
+.nav-apply-btn {
+  display: inline-flex !important;
+}
+
 @media (max-width: 1120px) {
   .desktop-nav-menu {
     display: none !important;
@@ -164,13 +174,26 @@ body {
   }
 }
 
+@media (max-width: 640px) {
+  .nav-audio-btn {
+    display: none !important;
+  }
+  .nav-helpline-pill {
+    display: none !important;
+  }
+  .nav-apply-btn {
+    padding: 8px 14px !important;
+    font-size: 0.8rem !important;
+  }
+}
+
 /* =======================================================
    HERO 3-COLUMN DESKTOP GRID & SPACIOUS STATS PANEL
    ======================================================= */
 .hero-layout-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 36px;
   align-items: center;
 }
 
@@ -178,6 +201,30 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px; /* Generous separation so boxes never get too close */
+}
+
+.hero-stat-card {
+  padding: 34px 38px;
+  border-radius: 30px;
+  text-align: left;
+  background: #ffffff;
+  border: 1.5px solid #ece6db;
+  box-shadow: 0 10px 32px -8px rgba(30, 58, 47, 0.08), 0 2px 8px rgba(30, 58, 47, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.hero-arched-frame {
+  width: 100%;
+  height: 430px;
+  border-radius: 180px 180px 36px 36px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -12px rgba(30, 58, 47, 0.16);
+  border: 5px solid #ffffff;
+  background: #eaf2ed;
+  position: relative;
 }
 
 @media (min-width: 1024px) {
@@ -196,16 +243,30 @@ body {
   .hero-stats-panel {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 20px !important;
-    margin-top: 28px;
+    gap: 18px !important;
+    margin-top: 24px;
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-stat-card {
+    padding: 24px 22px;
+    border-radius: 22px;
+  }
+  .hero-arched-frame {
+    height: 330px;
+    border-radius: 140px 140px 28px 28px;
   }
 }
 
 @media (max-width: 640px) {
   .hero-stats-panel {
     grid-template-columns: 1fr !important;
-    gap: 20px !important;
+    gap: 16px !important;
+  }
+  .hero-layout-grid {
+    gap: 28px;
   }
 }
 
@@ -213,7 +274,7 @@ body {
 .two-col-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 48px;
+  gap: 36px;
   align-items: center;
 }
 @media (min-width: 1024px) {
@@ -227,7 +288,7 @@ body {
 .services-three-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 28px;
+  gap: 24px;
 }
 @media (min-width: 768px) {
   .services-three-grid {
@@ -236,17 +297,107 @@ body {
   }
 }
 
+/* About Section Responsive Grids */
+.about-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+@media (max-width: 640px) {
+  .about-vision-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+.about-triptych-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  align-items: center;
+}
+.about-triptych-pill {
+  height: 420px;
+  border-radius: 120px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(30, 58, 47, 0.1);
+  border: 4px solid #ffffff;
+  transition: transform 0.3s ease;
+}
+@media (max-width: 768px) {
+  .about-triptych-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .about-triptych-pill {
+    height: 240px !important;
+    border-radius: 28px !important;
+    transform: none !important;
+  }
+}
+
+/* Project Manobal Responsive Grids */
+.manobal-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+@media (min-width: 1024px) {
+  .manobal-overview-grid {
+    grid-template-columns: 1fr 1.3fr;
+    gap: 48px;
+    margin-bottom: 70px;
+  }
+}
+
+/* Fee Calculator Responsive Grid */
+.fee-calculator-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+@media (min-width: 1024px) {
+  .fee-calculator-grid {
+    grid-template-columns: 1.25fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* Contact Section Responsive Grid */
+.contact-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  margin-bottom: 60px;
+}
+@media (min-width: 1024px) {
+  .contact-grid-layout {
+    grid-template-columns: 1fr 1.35fr;
+    gap: 48px;
+    margin-bottom: 80px;
+  }
+}
+
 /* 4-Column Aligned Footer Grid */
 .footer-grid-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 36px;
   align-items: start;
 }
 @media (min-width: 640px) and (max-width: 1023px) {
   .footer-grid-layout {
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 36px;
+  }
+}
+@media (min-width: 1024px) {
+  .footer-grid-layout {
+    grid-template-columns: 2.2fr 1fr 1.3fr 1.6fr;
+    gap: 52px;
   }
 }
 @media (min-width: 1024px) {
@@ -462,4 +613,35 @@ body.is-hovering .custom-cursor-follower {
   background: rgba(24, 37, 32, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
+
+/* =======================================================
+   MOBILE & TOUCH-DEVICE OPTIMIZATIONS
+   ======================================================= */
+@media (pointer: coarse), (hover: none) {
+  .custom-cursor,
+  .custom-cursor-follower {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .container-custom {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+  
+  .btn-magnetic {
+    padding: 12px 22px !important;
+    font-size: 0.88rem !important;
+  }
+}
+
+/* Prevent auto-zoom on mobile inputs in iOS */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  font-size: 16px !important;
 }

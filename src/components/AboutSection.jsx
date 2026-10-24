@@ -62,7 +62,7 @@ export default function AboutSection() {
             </p>
 
             {/* Vision and Mission Columns (from Reference Image) */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px', marginBottom: '32px' }}>
+            <div className="about-vision-grid">
               <div 
                 className="warm-card"
                 style={{ padding: '24px 20px', borderRadius: '20px', background: '#F8F5EE', border: '1px solid #E6E0D5' }}
@@ -98,7 +98,7 @@ export default function AboutSection() {
                   setShowTrustDrawer(true);
                 }}
                 className="btn-magnetic btn-primary"
-                style={{ padding: '14px 28px', fontSize: '0.92rem' }}
+                style={{ padding: '14px 24px', fontSize: '0.9rem', maxWidth: '100%', whiteSpace: 'normal', textAlign: 'center' }}
               >
                 <ShieldCheck size={17} />
                 <span>Verify Trust Credentials (F 2405)</span>
@@ -106,26 +106,14 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Right Side: Triptych of 3 Vertical Pill/Stadium Images (Matching Reference Image!) */}
+          {/* Right Side: Triptych of 3 Vertical Pill/Stadium Images (Responsive Layout) */}
           <div>
-            <div 
-              style={{ 
-                display: 'grid', 
-                gridTemplateColumns: 'repeat(3, 1fr)', 
-                gap: '14px', 
-                alignItems: 'center' 
-              }}
-            >
+            <div className="about-triptych-grid">
               {/* Triptych Pill 1: Simulation Ward */}
               <div 
+                className="about-triptych-pill"
                 style={{
-                  height: '420px',
-                  borderRadius: '120px',
-                  overflow: 'hidden',
-                  boxShadow: '0 16px 36px rgba(30, 58, 47, 0.1)',
-                  border: '4px solid #FFFFFF',
-                  transform: 'translateY(-15px)',
-                  transition: 'transform 0.3s ease'
+                  transform: 'translateY(-15px)'
                 }}
               >
                 <img 
@@ -137,14 +125,9 @@ export default function AboutSection() {
 
               {/* Triptych Pill 2: Patient Bedside Care */}
               <div 
+                className="about-triptych-pill"
                 style={{
-                  height: '460px',
-                  borderRadius: '120px',
-                  overflow: 'hidden',
-                  boxShadow: '0 20px 45px rgba(30, 58, 47, 0.14)',
-                  border: '4px solid #FFFFFF',
-                  transform: 'translateY(15px)',
-                  transition: 'transform 0.3s ease'
+                  transform: 'translateY(15px)'
                 }}
               >
                 <img 
@@ -156,19 +139,14 @@ export default function AboutSection() {
 
               {/* Triptych Pill 3: Campus Gardens & Building */}
               <div 
+                className="about-triptych-pill"
                 style={{
-                  height: '420px',
-                  borderRadius: '120px',
-                  overflow: 'hidden',
-                  boxShadow: '0 16px 36px rgba(30, 58, 47, 0.1)',
-                  border: '4px solid #FFFFFF',
-                  transform: 'translateY(-15px)',
-                  transition: 'transform 0.3s ease'
+                  transform: 'translateY(-15px)'
                 }}
               >
                 <img 
                   src="/images/campus-building.jpg" 
-                  alt="ASPM Healthcare Institute Campus" 
+                  alt="ASPM Educational Campus Building" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
@@ -253,7 +231,8 @@ export default function AboutSection() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '20px'
+            padding: '14px',
+            overflowY: 'auto'
           }}
           onClick={() => setShowTrustDrawer(false)}
         >
@@ -262,7 +241,9 @@ export default function AboutSection() {
             style={{
               maxWidth: '580px',
               width: '100%',
-              padding: '36px',
+              maxHeight: '92vh',
+              overflowY: 'auto',
+              padding: 'clamp(24px, 5vw, 36px) clamp(18px, 4vw, 32px)',
               borderRadius: '28px',
               position: 'relative',
               background: '#FFFFFF',

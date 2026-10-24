@@ -57,7 +57,7 @@ export default function AdmissionModal({ isOpen, onClose, initialCourse = 'anm' 
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '20px',
+        padding: '14px',
         overflowY: 'auto'
       }}
       onClick={handleClose}
@@ -67,10 +67,12 @@ export default function AdmissionModal({ isOpen, onClose, initialCourse = 'anm' 
         style={{
           maxWidth: '560px',
           width: '100%',
+          maxHeight: '92vh',
+          overflowY: 'auto',
           background: '#FFFFFF',
           border: '1px solid #E6E0D5',
-          borderRadius: '32px',
-          padding: '38px',
+          borderRadius: '28px',
+          padding: 'clamp(24px, 5vw, 36px) clamp(18px, 4vw, 32px)',
           position: 'relative',
           boxShadow: '0 30px 80px rgba(30, 58, 47, 0.25)'
         }}

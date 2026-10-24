@@ -112,8 +112,8 @@ export default function ProjectManobal() {
           className="warm-card"
           style={{
             maxWidth: '1000px',
-            margin: '0 auto 60px auto',
-            padding: '32px 40px',
+            margin: '0 auto 50px auto',
+            padding: 'clamp(22px, 4vw, 32px) clamp(18px, 4vw, 36px)',
             borderRadius: '28px',
             background: 'linear-gradient(135deg, #FDF3F0 0%, #FAF0EB 100%)',
             border: '1.5px solid #F5C6B8',
@@ -121,14 +121,14 @@ export default function ProjectManobal() {
             flexWrap: 'wrap',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: '24px'
+            gap: '20px'
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
             <div 
               style={{
-                width: '60px',
-                height: '60px',
+                width: '54px',
+                height: '54px',
                 borderRadius: '50%',
                 background: '#C85A3E',
                 display: 'flex',
@@ -139,14 +139,14 @@ export default function ProjectManobal() {
                 flexShrink: 0
               }}
             >
-              <LifeBuoy size={28} />
+              <LifeBuoy size={26} />
             </div>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#C85A3E', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                 <span className="pulse-dot" style={{ background: '#C85A3E' }} />
                 <span>24/7 Confidential Crisis Helpline</span>
               </div>
-              <div className="font-display" style={{ fontSize: '1.5rem', fontWeight: 800, color: '#182520', marginTop: '2px' }}>
+              <div className="font-display" style={{ fontSize: '1.4rem', fontWeight: 800, color: '#182520', marginTop: '2px' }}>
                 You Are Not Alone. Speak With Our Counselors.
               </div>
               <div style={{ fontSize: '0.86rem', color: '#6F7D75' }}>
@@ -159,30 +159,22 @@ export default function ProjectManobal() {
             href="tel:+917058830058"
             onClick={() => soundManager.playChime(440, 'triangle', 0.2)}
             className="btn-magnetic btn-crisis"
-            style={{ padding: '16px 32px', fontSize: '1rem', whiteSpace: 'nowrap' }}
+            style={{ padding: '14px 26px', fontSize: '0.94rem' }}
           >
-            <PhoneCall size={18} />
+            <PhoneCall size={17} />
             <span>Call +91 70588 30058</span>
           </a>
         </div>
 
-        {/* 2-Column Split */}
-        <div 
-          style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(12, 1fr)', 
-            gap: '40px', 
-            alignItems: 'center', 
-            marginBottom: '70px' 
-          }}
-        >
+        {/* 2-Column Responsive Split */}
+        <div className="manobal-overview-grid">
           {/* Left Community Circle Photo */}
-          <div style={{ gridColumn: 'span 12' }} className="lg:col-span-5">
+          <div>
             <div 
               className="warm-card"
               style={{
                 padding: '12px',
-                borderRadius: '32px',
+                borderRadius: '30px',
                 overflow: 'hidden',
                 background: '#FFFFFF'
               }}
@@ -192,9 +184,9 @@ export default function ProjectManobal() {
                 alt="Project Manobal Mental Health & De-Addiction Circle in Nashik" 
                 style={{
                   width: '100%',
-                  height: '420px',
+                  height: 'clamp(280px, 40vw, 420px)',
                   objectFit: 'cover',
-                  borderRadius: '24px',
+                  borderRadius: '22px',
                   display: 'block'
                 }}
               />
@@ -210,8 +202,8 @@ export default function ProjectManobal() {
           </div>
 
           {/* Right 4 Pillars Grid */}
-          <div style={{ gridColumn: 'span 12' }} className="lg:col-span-7">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px' }}>
+          <div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '18px' }}>
               {pillars.map((pillar, idx) => {
                 const Icon = pillar.icon;
                 return (

@@ -67,17 +67,18 @@ export default function Navbar({ onOpenAdmissionModal }) {
 
       {/* Floating Header Bar */}
       <header 
+        className="floating-header-bar"
         style={{
           position: 'fixed',
-          top: isScrolled ? '12px' : '20px',
+          top: isScrolled ? '10px' : '18px',
           left: 0,
           right: 0,
           zIndex: 1000,
-          transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-          padding: '0 20px'
+          transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       >
         <div 
+          className="floating-header-inner"
           style={{
             background: isScrolled 
               ? 'rgba(255, 255, 255, 0.98)' 
@@ -86,18 +87,16 @@ export default function Navbar({ onOpenAdmissionModal }) {
             WebkitBackdropFilter: 'blur(20px)',
             border: '1px solid #E6E0D5',
             borderRadius: '9999px',
-            padding: isScrolled ? '10px 24px' : '12px 28px',
             boxShadow: isScrolled 
               ? '0 14px 36px -8px rgba(30, 58, 47, 0.09), 0 2px 8px rgba(30, 58, 47, 0.04)' 
               : '0 8px 24px -6px rgba(30, 58, 47, 0.06)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            flexWrap: 'nowrap', // Strictly single line
+            flexWrap: 'nowrap',
             maxWidth: '1360px',
             margin: '0 auto',
             width: '100%',
-            gap: '16px',
             transition: 'all 0.3s ease'
           }}
         >
@@ -108,7 +107,7 @@ export default function Navbar({ onOpenAdmissionModal }) {
             style={{ 
               display: 'flex', 
               alignItems: 'center', 
-              gap: '12px', 
+              gap: '10px', 
               textDecoration: 'none', 
               color: 'inherit',
               flexShrink: 0,
@@ -117,8 +116,8 @@ export default function Navbar({ onOpenAdmissionModal }) {
           >
             <div 
               style={{
-                width: '42px',
-                height: '42px',
+                width: '40px',
+                height: '40px',
                 borderRadius: '50%',
                 background: '#EAF2ED',
                 border: '1.5px solid #C8DED1',
@@ -128,16 +127,16 @@ export default function Navbar({ onOpenAdmissionModal }) {
                 flexShrink: 0
               }}
             >
-              <GraduationCap size={22} color="#1E3A2F" />
+              <GraduationCap size={20} color="#1E3A2F" />
             </div>
             <div style={{ whiteSpace: 'nowrap' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span className="font-display" style={{ fontWeight: 800, fontSize: '1.16rem', color: '#182520', letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                <span className="font-display" style={{ fontWeight: 800, fontSize: '1.12rem', color: '#182520', letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>
                   ASPM <span style={{ color: '#2E5E4C' }}>INDIA</span>
                 </span>
                 <span className="pulse-dot" />
               </div>
-              <div style={{ fontSize: '0.64rem', color: '#6F7D75', letterSpacing: '0.04em', textTransform: 'uppercase', fontWeight: 700, lineHeight: 1, marginTop: '2px' }}>
+              <div style={{ fontSize: '0.62rem', color: '#6F7D75', letterSpacing: '0.04em', textTransform: 'uppercase', fontWeight: 700, lineHeight: 1, marginTop: '2px' }}>
                 Trust F 2405 • Est. 1989
               </div>
             </div>
@@ -158,10 +157,11 @@ export default function Navbar({ onOpenAdmissionModal }) {
           </nav>
 
           {/* Right Action Cluster (Single Line, Comfortable Padding) */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0, whiteSpace: 'nowrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0, whiteSpace: 'nowrap' }}>
             {/* Audio Toggle */}
             <button
               onClick={toggleSound}
+              className="nav-audio-btn"
               title={soundEnabled ? 'Mute sound' : 'Enable sound'}
               style={{
                 width: '38px',
@@ -170,7 +170,6 @@ export default function Navbar({ onOpenAdmissionModal }) {
                 background: soundEnabled ? '#EAF2ED' : '#F4F0E8',
                 border: soundEnabled ? '1px solid #2E5E4C' : '1px solid #E6E0D5',
                 color: soundEnabled ? '#1E3A2F' : '#6F7D75',
-                display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
@@ -185,8 +184,8 @@ export default function Navbar({ onOpenAdmissionModal }) {
             <a
               href="tel:+917058830058"
               onClick={() => soundManager.playChime(440, 'triangle', 0.2)}
+              className="nav-helpline-pill"
               style={{
-                display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
                 padding: '9px 18px',
@@ -212,10 +211,10 @@ export default function Navbar({ onOpenAdmissionModal }) {
                 soundManager.playChime(660);
                 onOpenAdmissionModal();
               }}
-              className="btn-magnetic btn-primary"
+              className="btn-magnetic btn-primary nav-apply-btn"
               style={{
-                padding: '10px 22px',
-                fontSize: '0.86rem',
+                padding: '10px 20px',
+                fontSize: '0.85rem',
                 flexShrink: 0,
                 whiteSpace: 'nowrap'
               }}
@@ -249,7 +248,7 @@ export default function Navbar({ onOpenAdmissionModal }) {
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu (Under 1080px) */}
+        {/* Mobile Dropdown Menu (Under 1120px) */}
         {mobileMenuOpen && (
           <div 
             style={{
@@ -257,13 +256,15 @@ export default function Navbar({ onOpenAdmissionModal }) {
               background: '#FFFFFF',
               border: '1px solid #E6E0D5',
               borderRadius: '24px',
-              padding: '24px',
+              padding: '22px 20px',
               boxShadow: '0 20px 45px rgba(30, 58, 47, 0.12)',
               maxWidth: '1240px',
-              margin: '10px auto 0'
+              margin: '10px auto 0',
+              maxHeight: 'calc(100vh - 90px)',
+              overflowY: 'auto'
             }}
           >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {navLinks.map((item) => (
                 <a
                   key={item.href}
@@ -272,7 +273,7 @@ export default function Navbar({ onOpenAdmissionModal }) {
                   style={{
                     color: '#182520',
                     textDecoration: 'none',
-                    fontSize: '0.98rem',
+                    fontSize: '0.96rem',
                     fontWeight: 600,
                     padding: '8px 0',
                     borderBottom: '1px solid #F3EFE8'
@@ -281,13 +282,38 @@ export default function Navbar({ onOpenAdmissionModal }) {
                   {item.label}
                 </a>
               ))}
-              <div style={{ display: 'flex', gap: '12px', marginTop: '10px' }}>
+              
+              {/* Mobile Sound Toggle Row */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #F3EFE8' }}>
+                <span style={{ fontSize: '0.9rem', color: '#4A5851', fontWeight: 600 }}>Interactive Audio FX</span>
+                <button
+                  onClick={toggleSound}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    padding: '6px 12px',
+                    borderRadius: '9999px',
+                    background: soundEnabled ? '#EAF2ED' : '#F4F0E8',
+                    border: soundEnabled ? '1px solid #2E5E4C' : '1px solid #E6E0D5',
+                    color: soundEnabled ? '#1E3A2F' : '#6F7D75',
+                    fontSize: '0.78rem',
+                    fontWeight: 700,
+                    cursor: 'pointer'
+                  }}
+                >
+                  {soundEnabled ? <Volume2 size={14} /> : <VolumeX size={14} />}
+                  <span>{soundEnabled ? 'Sound ON' : 'Sound OFF'}</span>
+                </button>
+              </div>
+
+              <div style={{ display: 'flex', gap: '10px', marginTop: '8px' }}>
                 <a
                   href="tel:+917058830058"
                   className="btn-magnetic btn-crisis"
-                  style={{ flex: 1, padding: '12px', fontSize: '0.88rem' }}
+                  style={{ flex: 1, padding: '11px', fontSize: '0.84rem' }}
                 >
-                  <PhoneCall size={15} />
+                  <PhoneCall size={14} />
                   <span>Call Helpline</span>
                 </a>
                 <button
@@ -296,9 +322,9 @@ export default function Navbar({ onOpenAdmissionModal }) {
                     onOpenAdmissionModal();
                   }}
                   className="btn-magnetic btn-primary"
-                  style={{ flex: 1, padding: '12px', fontSize: '0.88rem' }}
+                  style={{ flex: 1, padding: '11px', fontSize: '0.84rem' }}
                 >
-                  <Sparkles size={15} />
+                  <Sparkles size={14} />
                   <span>Apply Now</span>
                 </button>
               </div>

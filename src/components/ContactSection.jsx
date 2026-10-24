@@ -82,11 +82,11 @@ export default function ContactSection() {
           </p>
         </div>
 
-        {/* 2-Column Split */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '40px', marginBottom: '80px' }}>
+        {/* 2-Column Responsive Split */}
+        <div className="contact-grid-layout">
           
           {/* Left Contact Cards */}
-          <div style={{ gridColumn: 'span 12' }} className="lg:col-span-5">
+          <div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
               
               {/* Telephone Card */}
@@ -239,12 +239,12 @@ export default function ContactSection() {
           </div>
 
           {/* Right Message Form */}
-          <div style={{ gridColumn: 'span 12' }} className="lg:col-span-7">
+          <div>
             <div 
               className="warm-card"
               style={{
-                padding: '44px 38px',
-                borderRadius: '32px',
+                padding: 'clamp(24px, 5vw, 44px) clamp(18px, 4vw, 38px)',
+                borderRadius: '30px',
                 background: '#FFFFFF',
                 border: '1px solid #E6DFD4',
                 boxShadow: '0 16px 40px rgba(30, 58, 47, 0.06)'

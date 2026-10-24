@@ -53,8 +53,8 @@ export default function Hero({ onOpenAdmissionModal }) {
       ref={heroRef}
       style={{
         position: 'relative',
-        paddingTop: '150px',
-        paddingBottom: '90px',
+        paddingTop: 'clamp(115px, 12vw, 150px)',
+        paddingBottom: 'clamp(60px, 8vw, 90px)',
         background: 'radial-gradient(ellipse at 50% 25%, #FAF5EC 0%, #FBF9F5 75%)',
         overflow: 'hidden'
       }}
@@ -78,7 +78,7 @@ export default function Hero({ onOpenAdmissionModal }) {
             <h1 
               className="font-display" 
               style={{ 
-                fontSize: 'clamp(2.3rem, 3.8vw, 3.6rem)', 
+                fontSize: 'clamp(2.1rem, 4.2vw, 3.6rem)', 
                 fontWeight: 800, 
                 lineHeight: 1.12,
                 color: '#182520',
@@ -94,9 +94,9 @@ export default function Hero({ onOpenAdmissionModal }) {
             {/* Description */}
             <p 
               style={{ 
-                fontSize: 'clamp(0.96rem, 1.1vw, 1.08rem)', 
+                fontSize: 'clamp(0.94rem, 1.1vw, 1.08rem)', 
                 color: '#4A5851', 
-                marginBottom: '28px',
+                marginBottom: '26px',
                 lineHeight: 1.68,
                 maxWidth: '520px'
               }}
@@ -105,14 +105,14 @@ export default function Hero({ onOpenAdmissionModal }) {
             </p>
 
             {/* Pill Action Buttons */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center', marginBottom: '28px' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center', marginBottom: '26px' }}>
               <button
                 onClick={() => {
                   soundManager.playChime(660);
                   onOpenAdmissionModal();
                 }}
                 className="btn-magnetic btn-primary"
-                style={{ padding: '15px 30px', fontSize: '0.94rem' }}
+                style={{ padding: '14px 28px', fontSize: '0.92rem' }}
               >
                 <span>Make Application</span>
                 <ArrowRight size={16} />
@@ -122,7 +122,7 @@ export default function Hero({ onOpenAdmissionModal }) {
                 href="#manobal"
                 onClick={() => soundManager.playClick()}
                 className="btn-magnetic btn-crisis"
-                style={{ padding: '15px 24px', fontSize: '0.92rem' }}
+                style={{ padding: '14px 22px', fontSize: '0.9rem' }}
               >
                 <Heart size={15} />
                 <span>Crisis Hotline</span>
@@ -130,7 +130,7 @@ export default function Hero({ onOpenAdmissionModal }) {
             </div>
 
             {/* Verification Checklist */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', fontSize: '0.84rem', color: '#6F7D75' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', fontSize: '0.84rem', color: '#6F7D75' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <CheckCircle size={15} color="#22865E" />
                 <span>Govt. Approved (ANM & GNM)</span>
@@ -151,19 +151,8 @@ export default function Hero({ onOpenAdmissionModal }) {
                 maxWidth: '340px'
               }}
             >
-              {/* Arched Oval Stadium Frame */}
-              <div 
-                style={{
-                  width: '100%',
-                  height: '430px',
-                  borderRadius: '180px 180px 36px 36px',
-                  overflow: 'hidden',
-                  boxShadow: '0 20px 50px -12px rgba(30, 58, 47, 0.16)',
-                  border: '5px solid #FFFFFF',
-                  background: '#EAF2ED',
-                  position: 'relative'
-                }}
-              >
+              {/* Arched Oval Stadium Frame (Responsive Height) */}
+              <div className="hero-arched-frame">
                 <img 
                   src="/images/nurse-portrait.jpg" 
                   alt="Senior Nurse Educator at Swami Narayan Nursing Institute" 
@@ -214,82 +203,40 @@ export default function Hero({ onOpenAdmissionModal }) {
           {/* Right Column: 3 Spacious Stat Cards */}
           <div ref={rightStatsRef} className="hero-stats-panel">
             {/* Card 1 */}
-            <div 
-              className="warm-card"
-              style={{
-                padding: '34px 38px',
-                borderRadius: '30px',
-                textAlign: 'left',
-                background: '#FFFFFF',
-                border: '1.5px solid #ECE6DB',
-                boxShadow: '0 10px 32px -8px rgba(30, 58, 47, 0.08), 0 2px 8px rgba(30, 58, 47, 0.03)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                transition: 'all 0.3s ease'
-              }}
-            >
-              <div className="font-display" style={{ fontSize: '2.8rem', fontWeight: 800, color: '#1E3A2F', lineHeight: 1, marginBottom: '12px' }}>
-                36<span style={{ fontSize: '2rem', color: '#2E5E4C' }}>+</span>
+            <div className="hero-stat-card warm-card">
+              <div className="font-display" style={{ fontSize: 'clamp(2.2rem, 3.5vw, 2.8rem)', fontWeight: 800, color: '#1E3A2F', lineHeight: 1, marginBottom: '10px' }}>
+                36<span style={{ fontSize: '1.8rem', color: '#2E5E4C' }}>+</span>
               </div>
-              <div style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '8px' }}>
+              <div style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '6px' }}>
                 Years of Service
               </div>
-              <div style={{ fontSize: '0.92rem', color: '#4A5851', lineHeight: 1.5 }}>
+              <div style={{ fontSize: '0.88rem', color: '#4A5851', lineHeight: 1.48 }}>
                 Serving Maharashtra since 1989
               </div>
             </div>
 
             {/* Card 2 */}
-            <div 
-              className="warm-card"
-              style={{
-                padding: '34px 38px',
-                borderRadius: '30px',
-                textAlign: 'left',
-                background: '#FFFFFF',
-                border: '1.5px solid #ECE6DB',
-                boxShadow: '0 10px 32px -8px rgba(30, 58, 47, 0.08), 0 2px 8px rgba(30, 58, 47, 0.03)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                transition: 'all 0.3s ease'
-              }}
-            >
-              <div className="font-display" style={{ fontSize: '2.8rem', fontWeight: 800, color: '#1E3A2F', lineHeight: 1, marginBottom: '12px' }}>
-                5,000<span style={{ fontSize: '2rem', color: '#22865E' }}>+</span>
+            <div className="hero-stat-card warm-card">
+              <div className="font-display" style={{ fontSize: 'clamp(2.2rem, 3.5vw, 2.8rem)', fontWeight: 800, color: '#1E3A2F', lineHeight: 1, marginBottom: '10px' }}>
+                5,000<span style={{ fontSize: '1.8rem', color: '#22865E' }}>+</span>
               </div>
-              <div style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '8px' }}>
+              <div style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '6px' }}>
                 Trained Graduates
               </div>
-              <div style={{ fontSize: '0.92rem', color: '#4A5851', lineHeight: 1.5 }}>
+              <div style={{ fontSize: '0.88rem', color: '#4A5851', lineHeight: 1.48 }}>
                 In hospitals & health centers
               </div>
             </div>
 
             {/* Card 3 */}
-            <div 
-              className="warm-card"
-              style={{
-                padding: '34px 38px',
-                borderRadius: '30px',
-                textAlign: 'left',
-                background: '#FFFFFF',
-                border: '1.5px solid #ECE6DB',
-                boxShadow: '0 10px 32px -8px rgba(30, 58, 47, 0.08), 0 2px 8px rgba(30, 58, 47, 0.03)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                transition: 'all 0.3s ease'
-              }}
-            >
-              <div className="font-display" style={{ fontSize: '2.6rem', fontWeight: 800, color: '#1E3A2F', lineHeight: 1, marginBottom: '12px' }}>
+            <div className="hero-stat-card warm-card">
+              <div className="font-display" style={{ fontSize: 'clamp(2.1rem, 3.3vw, 2.6rem)', fontWeight: 800, color: '#1E3A2F', lineHeight: 1, marginBottom: '10px' }}>
                 ₹34,000
               </div>
-              <div style={{ fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '8px' }}>
+              <div style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#2E5E4C', fontWeight: 800, marginBottom: '6px' }}>
                 Annual ANM Fee
               </div>
-              <div style={{ fontSize: '0.92rem', color: '#4A5851', lineHeight: 1.5 }}>
+              <div style={{ fontSize: '0.88rem', color: '#4A5851', lineHeight: 1.48 }}>
                 Govt-subsidized rate for 2025–26
               </div>
             </div>
